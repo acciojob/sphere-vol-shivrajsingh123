@@ -1,19 +1,13 @@
-function volume_sphere() {
-    document.getElementById("MyForm").addEventListener("submit", function(event) {
+document.getElementById("MyForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form submission
 
     let radius = parseFloat(document.getElementById("radius").value);
-    
+
     if (isNaN(radius) || radius <= 0) {
-        alert("Please enter a valid positive number for radius.");
+        document.getElementById("volume").value = "Invalid input";
         return;
     }
 
     let volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
-    document.getElementById("volume").value = volume.toFixed(2); // Display result with two decimal places
+    document.getElementById("volume").value = volume.toFixed(4); // Match Cypress expected value
 });
-
-  
- 
-
-window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
