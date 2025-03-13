@@ -4,7 +4,7 @@ document.getElementById("MyForm").addEventListener("submit", function(event) {
     let radius = parseFloat(document.getElementById("radius").value);
 
     if (isNaN(radius) || radius <= 0) {
-        document.getElementById("volume").value = "Invalid input";
+        document.getElementById("volume").value ="NaN";
         return;
     }
 
